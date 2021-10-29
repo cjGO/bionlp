@@ -32,6 +32,30 @@ nb_path: "00_core.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bionlp_imports</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
 <div class="output">
@@ -40,9 +64,175 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="say_hello" class="doc_header"><code>say_hello</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L6" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>say_hello</code>(<strong><code>to</code></strong>)</p>
+<h4 id="gen_dna_vocab" class="doc_header"><code>gen_dna_vocab</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L13" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gen_dna_vocab</code>(<strong><code>frameshift</code></strong>=<em><code>True</code></em>, <strong><code>kmer</code></strong>=<em><code>1</code></em>, <strong><code>letters</code></strong>=<em><code>'ATCGN'</code></em>)</p>
 </blockquote>
-<p>Say hello to somebody</p>
+<p>Makes a dictionary for mapping a raw sequence
+to one hot encoding</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="pred_vs_truth" class="doc_header"><code>pred_vs_truth</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L36" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>pred_vs_truth</code>(<strong><code>model</code></strong>, <strong><code>dataloader</code></strong>)</p>
+</blockquote>
+<p>takes a trained model and runs predictions over the
+given dataloader.</p>
+<p>plots hist of the ground truths vs predictions</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="prep_seqs" class="doc_header"><code>prep_seqs</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L94" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>prep_seqs</code>(<strong><code>seq</code></strong>, <strong><code>max_length</code></strong>=<em><code>10</code></em>)</p>
+</blockquote>
+<p>takes in a raw seq 'ATTATA' -&gt; one hot encodes to specified max_len</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="DnaDataset" class="doc_header"><code>class</code> <code>DnaDataset</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L106" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DnaDataset</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwds</code></strong>) :: <code>Dataset</code></p>
+</blockquote>
+<p>takes in dataframe with ['Seqs'] and ['Exp']</p>
+<p>returns pytorch dataset</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="StepByStep" class="doc_header"><code>class</code> <code>StepByStep</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L142" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StepByStep</code>(<strong><code>model</code></strong>, <strong><code>loss_fn</code></strong>, <strong><code>optimizer</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="generate_Seqs_Exp_Dataset" class="doc_header"><code>generate_Seqs_Exp_Dataset</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L363" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>generate_Seqs_Exp_Dataset</code>(<strong><code>num_seq</code></strong>, <strong><code>low</code></strong>, <strong><code>high</code></strong>)</p>
+</blockquote>
+<p>generates a DNA dataset with Expression(or whatever else) values
+nucleotides/expressions will be drawn from 2 distinct distributions</p>
+<p>input : num_seq -&gt; int: number of sequences
+        length_seq -&gt; tuple(min/max length of sequences)</p>
 
 </div>
 
@@ -68,7 +258,319 @@ nb_path: "00_core.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">say_hello</span><span class="p">(</span><span class="s2">&quot;Sylvain&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">generate_Seqs_Exp_Dataset</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Seqs</th>
+      <th>Exp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>GTTGTGGTTTC</td>
+      <td>0.21149332839302568</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>TTATTGCCCTG</td>
+      <td>-0.6734173749301339</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CCTGGCTGACTTTAT</td>
+      <td>-0.8094650799459052</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>TCGACGACCCAA</td>
+      <td>-0.6704788021178381</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>GTATATCCAAAT</td>
+      <td>-0.1483692902697492</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>GAGAGAGGATCTAAC</td>
+      <td>-1.4565325911339704</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>CGTTCAAGCGACGTT</td>
+      <td>0.05914054769723368</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>TCGTTATGGGA</td>
+      <td>-0.29412480775248456</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>GTTCCTACCCCCGTGA</td>
+      <td>-0.9986863786450021</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>TGGCGCCTTTGTGTCCA</td>
+      <td>-0.768962610264953</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>AGCTGGTGTATCT</td>
+      <td>-0.9454579287098425</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>GCGACCTTAGTGAACT</td>
+      <td>-2.227856757181979</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>GAATTCTCACCTAGACT</td>
+      <td>1.3695793530820117</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>CGCGAGTTATCTCGGGAAA</td>
+      <td>0.20557431746062454</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>TGATGTTATCTT</td>
+      <td>-2.0033552998355892</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>CAGAACGCCTTT</td>
+      <td>0.6119742050493817</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>TACGTTAGGTGTTGGCTTC</td>
+      <td>0.8139060037308501</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>ACTCCTAATAT</td>
+      <td>0.7094898263361299</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>TGTCCCTTGAGGGCCATT</td>
+      <td>-0.0954058200131837</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>CCAGCCGCGAAC</td>
+      <td>1.0527303461396535</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>AAGCATCTGCGT</td>
+      <td>-1.4965467725090666</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>CTTTCCGCTCAGAC</td>
+      <td>-0.37592351855617234</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>CGCAGATGACATGCGCAA</td>
+      <td>-1.6000435922224479</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>GTTTTCTTTAGGAACTTTA</td>
+      <td>-0.5052470178831199</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>AATGCTTGGCAGCGTACAT</td>
+      <td>0.29750697722067565</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>CGATACTGCGGTATA</td>
+      <td>1.2028735097430845</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>TAACCGGGAC</td>
+      <td>0.014492135583022848</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>GAGAAATATCCG</td>
+      <td>0.9037278842092268</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>ACCCTAGCGG</td>
+      <td>-0.1589093899695254</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>TACGCGAGGCCGCAC</td>
+      <td>0.6015061666449715</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>TGACCCTCTGTGGACTCTA</td>
+      <td>-1.5580675134456445</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>CGAATATGCTA</td>
+      <td>-0.3962309889853234</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>TATGCAGTTCAA</td>
+      <td>-0.12657319360624378</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>GGACACGGCCA</td>
+      <td>-2.0725649573461573</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>GAGCAAACTG</td>
+      <td>1.3552676728259048</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>AAGGCGAAATGTTTTAA</td>
+      <td>-1.2006281238088259</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>CATGCGCATGAATGTGG</td>
+      <td>0.9693719265519685</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>AGGCGCAGACAGT</td>
+      <td>0.7255667498872482</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>GAGCCTGGTTCCACC</td>
+      <td>-0.7268722724466948</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>TAAAAAACATAGT</td>
+      <td>0.8678693782824982</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>TGGCACGATC</td>
+      <td>-0.7419076287094656</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>TAGTTGGGAGAGAGACTCT</td>
+      <td>-0.8122553537797939</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>AAGTAGGTTCCTG</td>
+      <td>-0.4990487294158272</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>CGACCACTCTGTTCT</td>
+      <td>-0.19939683398926486</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>CTGTTCCTCT</td>
+      <td>0.001112480053071957</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>CGGCTTCCACTTG</td>
+      <td>-0.9545027659453355</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>CATACCTCTCTCA</td>
+      <td>-0.707770914817555</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>GCCCATGACC</td>
+      <td>-1.015033433132734</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>TCGCTGTGTCT</td>
+      <td>-0.31936709907661714</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>TATGAATGTAAACTGG</td>
+      <td>0.038445879524308474</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">/</span> <span class="n">dist</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="n">dist</span> <span class="o">//</span> <span class="mi">1</span>
+<span class="n">dist</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">dist</span>
 </pre></div>
 
     </div>
@@ -83,28 +585,16 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Hello Sylvain!&#39;</pre>
+<pre>array([3., 3., 1., 1., 1., 3., 2., 1., 1., 1., 3., 3., 2., 2., 2., 1., 2.,
+       1., 1., 1., 2., 1., 3., 2., 1., 2., 2., 2., 1., 1., 1., 2., 3., 1.,
+       3., 1., 2., 3., 3., 3., 1., 1., 3., 1., 1., 2., 3., 1., 2., 2., 2.,
+       2., 1., 2., 2., 2., 1., 1., 3., 1., 2., 2., 2., 2., 1., 1., 2., 2.,
+       3., 3., 2., 4., 2., 2., 3., 1., 2., 2., 2., 3., 2., 1., 1., 2., 2.,
+       2., 2., 2., 2., 1., 1., 3., 2., 3., 1., 1., 2., 2., 2., 2.])</pre>
 </div>
 
 </div>
 
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">say_hello</span><span class="p">(</span><span class="s2">&quot;Jeremy&quot;</span><span class="p">)</span><span class="o">==</span><span class="s2">&quot;Hello Jeremy!&quot;</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
