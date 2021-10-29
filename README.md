@@ -1,16 +1,12 @@
 # BioNLP
-> Useful functiosn for DL with bio seqs
+> Useful fxns for DL with bio seqs
 
-
-This file will become your README and also the index of your documentation.
 
 ## Install
 
-`pip install your_project_name`
-
 ## How to use
 
-Fill me in please! Don't forget code examples:
+Example starting with synthetic dataset generation.
 
 ```python
 dna_dict = gen_dna_vocab(kmer=1)
@@ -320,24 +316,12 @@ DnaDataset(synthetic_data)
 
 ```python
 #retreive single data point ; One hot encoded + target value 
-DnaDataset(synthetic_data).__getitem__(4)
+DnaDataset(synthetic_data).__getitem__(43)[0].shape
 ```
 
 
 
 
-    (tensor([[0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
-              0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1.],
-             [1., 0., 0., 1., 0., 1., 0., 0., 0., 0., 0., 1., 1., 0., 1., 1., 0., 1.,
-              0., 0., 1., 0., 0., 0., 1., 0., 0., 0., 0.],
-             [0., 1., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0.,
-              0., 0., 0., 0., 1., 0., 0., 1., 1., 1., 0.],
-             [0., 0., 1., 0., 0., 0., 0., 1., 1., 0., 1., 0., 0., 0., 0., 0., 0., 0.,
-              1., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0.],
-             [0., 0., 0., 0., 1., 0., 1., 0., 0., 0., 0., 0., 0., 1., 0., 0., 1., 0.,
-              0., 1., 0., 1., 0., 0., 0., 0., 0., 0., 0.],
-             [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
-              0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]]),
-     tensor(-0.2003))
+    torch.Size([6, 29])
 
 

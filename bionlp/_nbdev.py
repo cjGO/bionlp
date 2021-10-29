@@ -4,6 +4,9 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"gen_dna_vocab": "00_core.ipynb",
          "pred_vs_truth": "00_core.ipynb",
+         "raw2token": "00_core.ipynb",
+         "token2hot": "00_core.ipynb",
+         "hot2token": "00_core.ipynb",
          "prep_seqs": "00_core.ipynb",
          "DnaDataset": "00_core.ipynb",
          "StepByStep": "00_core.ipynb",

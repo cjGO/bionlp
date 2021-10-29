@@ -64,7 +64,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="gen_dna_vocab" class="doc_header"><code>gen_dna_vocab</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L13" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gen_dna_vocab</code>(<strong><code>frameshift</code></strong>=<em><code>True</code></em>, <strong><code>kmer</code></strong>=<em><code>1</code></em>, <strong><code>letters</code></strong>=<em><code>'ATCGN'</code></em>)</p>
+<h4 id="gen_dna_vocab" class="doc_header"><code>gen_dna_vocab</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>gen_dna_vocab</code>(<strong><code>frameshift</code></strong>=<em><code>True</code></em>, <strong><code>kmer</code></strong>=<em><code>1</code></em>, <strong><code>letters</code></strong>=<em><code>'ATCGN'</code></em>)</p>
 </blockquote>
 <p>Makes a dictionary for mapping a raw sequence
 to one hot encoding</p>
@@ -97,7 +97,7 @@ to one hot encoding</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="pred_vs_truth" class="doc_header"><code>pred_vs_truth</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L36" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>pred_vs_truth</code>(<strong><code>model</code></strong>, <strong><code>dataloader</code></strong>)</p>
+<h4 id="pred_vs_truth" class="doc_header"><code>pred_vs_truth</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L37" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>pred_vs_truth</code>(<strong><code>model</code></strong>, <strong><code>dataloader</code></strong>)</p>
 </blockquote>
 <p>takes a trained model and runs predictions over the
 given dataloader.</p>
@@ -131,7 +131,82 @@ given dataloader.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="prep_seqs" class="doc_header"><code>prep_seqs</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L94" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>prep_seqs</code>(<strong><code>seq</code></strong>, <strong><code>max_length</code></strong>=<em><code>10</code></em>)</p>
+<h4 id="raw2token" class="doc_header"><code>raw2token</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>raw2token</code>(<strong><code>seq</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="token2hot" class="doc_header"><code>token2hot</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L107" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>token2hot</code>(<strong><code>seq</code></strong>, <strong><code>max_length</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="hot2token" class="doc_header"><code>hot2token</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L113" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>hot2token</code>(<strong><code>seq</code></strong>)</p>
+</blockquote>
+<p>one-hot to tokens</p>
+<p>input:single sequence</p>
+<p>e.g. [[0 0 1 0], [0 0 0 1] , [0 1 0 0]] -&gt; [2 3 1]</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="prep_seqs" class="doc_header"><code>prep_seqs</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L122" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>prep_seqs</code>(<strong><code>seq</code></strong>, <strong><code>max_length</code></strong>=<em><code>10</code></em>)</p>
 </blockquote>
 <p>takes in a raw seq 'ATTATA' -&gt; one hot encodes to specified max_len</p>
 
@@ -163,7 +238,7 @@ given dataloader.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="DnaDataset" class="doc_header"><code>class</code> <code>DnaDataset</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L106" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DnaDataset</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwds</code></strong>) :: <code>Dataset</code></p>
+<h2 id="DnaDataset" class="doc_header"><code>class</code> <code>DnaDataset</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L131" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DnaDataset</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwds</code></strong>) :: <code>Dataset</code></p>
 </blockquote>
 <p>takes in dataframe with ['Seqs'] and ['Exp']</p>
 <p>returns pytorch dataset</p>
@@ -196,7 +271,7 @@ given dataloader.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="StepByStep" class="doc_header"><code>class</code> <code>StepByStep</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L142" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StepByStep</code>(<strong><code>model</code></strong>, <strong><code>loss_fn</code></strong>, <strong><code>optimizer</code></strong>)</p>
+<h2 id="StepByStep" class="doc_header"><code>class</code> <code>StepByStep</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L167" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StepByStep</code>(<strong><code>model</code></strong>, <strong><code>loss_fn</code></strong>, <strong><code>optimizer</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -227,7 +302,7 @@ given dataloader.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="generate_Seqs_Exp_Dataset" class="doc_header"><code>generate_Seqs_Exp_Dataset</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L363" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>generate_Seqs_Exp_Dataset</code>(<strong><code>num_seq</code></strong>, <strong><code>low</code></strong>, <strong><code>high</code></strong>)</p>
+<h4 id="generate_Seqs_Exp_Dataset" class="doc_header"><code>generate_Seqs_Exp_Dataset</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L388" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>generate_Seqs_Exp_Dataset</code>(<strong><code>num_seq</code></strong>, <strong><code>low</code></strong>, <strong><code>high</code></strong>)</p>
 </blockquote>
 <p>generates a DNA dataset with Expression(or whatever else) values
 nucleotides/expressions will be drawn from 2 distinct distributions</p>
