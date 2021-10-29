@@ -13,23 +13,17 @@ This file will become your README and also the index of your documentation.
 Fill me in please! Don't forget code examples:
 
 ```python
-1+1
+dna_dict = gen_dna_vocab(kmer=1)
 ```
 
 
+    ---------------------------------------------------------------------------
 
+    NameError                                 Traceback (most recent call last)
 
-    2
+    <ipython-input-4-65e0cc885efb> in <module>
+    ----> 1 dna_dict = gen_dna_vocab(kmer=1)
+    
 
-
-
-```python
-say_hello('test')
-```
-
-
-
-
-    'Hello test!'
-
+    NameError: name 'gen_dna_vocab' is not defined
 
