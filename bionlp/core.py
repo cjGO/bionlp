@@ -94,17 +94,27 @@ def pred_vs_truth(model,dataloader):
     plt.xlim(x_low,flat_truth.max()*1.5)
     plt.ylim(x_low,flat_truth.max()*1.5)
 
-    plt.show()
+    #plt.show()
 
     return figure
 
 # Cell
 
 def raw2token(seq):
+    """
+    takes in raw sequence then converts it to tokenized version
+
+    'ATT' -> [1 2 2]
+    """
     dna_dict = gen_dna_vocab()
     return [dna_dict[x] for x in seq]
 
 def token2hot(seq, max_length):
+    """
+    takes in tokenized sequences and returns 1-hot encoded
+
+    [1 2 2] -> [1 0 0 0], [0 1 0 0 ], [0 1 0 0]
+    """
     N = max_length - len(seq)
     x = np.pad(seq, (0, N), 'constant')
     x = F.one_hot(torch.tensor(x),num_classes=6)

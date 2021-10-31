@@ -10,9 +10,11 @@ index = {"gen_dna_vocab": "00_core.ipynb",
          "prep_seqs": "00_core.ipynb",
          "DnaDataset": "00_core.ipynb",
          "StepByStep": "00_core.ipynb",
-         "generate_Seqs_Exp_Dataset": "00_core.ipynb"}
+         "generate_Seqs_Exp_Dataset": "00_core.ipynb",
+         "baseline_cnn": "01_models.ipynb"}
 
-modules = ["core.py"]
+modules = ["core.py",
+           "models.py"]
 
 doc_url = "https://cjgo.github.io/bionlp/"
 

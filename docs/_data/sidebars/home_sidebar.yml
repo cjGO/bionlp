@@ -12,6 +12,9 @@ entries:
     - output: web,pdf
       title: bionlp
       url: core.html
+    - output: web,pdf
+      title: Title
+      url: models.html
     output: web
     title: bionlp
   output: web

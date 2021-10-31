@@ -133,6 +133,8 @@ given dataloader.</p>
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="raw2token" class="doc_header"><code>raw2token</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>raw2token</code>(<strong><code>seq</code></strong>)</p>
 </blockquote>
+<p>takes in raw sequence then converts it to tokenized version</p>
+<p>'ATT' -&gt; [1 2 2]</p>
 
 </div>
 
@@ -155,8 +157,10 @@ given dataloader.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="token2hot" class="doc_header"><code>token2hot</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L107" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>token2hot</code>(<strong><code>seq</code></strong>, <strong><code>max_length</code></strong>)</p>
+<h4 id="token2hot" class="doc_header"><code>token2hot</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L112" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>token2hot</code>(<strong><code>seq</code></strong>, <strong><code>max_length</code></strong>)</p>
 </blockquote>
+<p>takes in tokenized sequences and returns 1-hot encoded</p>
+<p>[1 2 2] -&gt; [1 0 0 0], [0 1 0 0 ], [0 1 0 0]</p>
 
 </div>
 
@@ -179,7 +183,7 @@ given dataloader.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="hot2token" class="doc_header"><code>hot2token</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L113" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>hot2token</code>(<strong><code>seq</code></strong>)</p>
+<h4 id="hot2token" class="doc_header"><code>hot2token</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L123" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>hot2token</code>(<strong><code>seq</code></strong>)</p>
 </blockquote>
 <p>one-hot to tokens</p>
 <p>input:single sequence</p>
@@ -206,7 +210,7 @@ given dataloader.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="prep_seqs" class="doc_header"><code>prep_seqs</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L122" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>prep_seqs</code>(<strong><code>seq</code></strong>, <strong><code>max_length</code></strong>=<em><code>10</code></em>)</p>
+<h4 id="prep_seqs" class="doc_header"><code>prep_seqs</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L132" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>prep_seqs</code>(<strong><code>seq</code></strong>, <strong><code>max_length</code></strong>=<em><code>10</code></em>)</p>
 </blockquote>
 <p>takes in a raw seq 'ATTATA' -&gt; one hot encodes to specified max_len</p>
 
@@ -238,7 +242,7 @@ given dataloader.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="DnaDataset" class="doc_header"><code>class</code> <code>DnaDataset</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L131" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DnaDataset</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwds</code></strong>) :: <code>Dataset</code></p>
+<h2 id="DnaDataset" class="doc_header"><code>class</code> <code>DnaDataset</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L141" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DnaDataset</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwds</code></strong>) :: <code>Dataset</code></p>
 </blockquote>
 <p>takes in dataframe with ['Seqs'] and ['Exp']</p>
 <p>returns pytorch dataset</p>
@@ -271,7 +275,7 @@ given dataloader.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="StepByStep" class="doc_header"><code>class</code> <code>StepByStep</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L167" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StepByStep</code>(<strong><code>model</code></strong>, <strong><code>loss_fn</code></strong>, <strong><code>optimizer</code></strong>)</p>
+<h2 id="StepByStep" class="doc_header"><code>class</code> <code>StepByStep</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L177" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>StepByStep</code>(<strong><code>model</code></strong>, <strong><code>loss_fn</code></strong>, <strong><code>optimizer</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -302,7 +306,7 @@ given dataloader.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="generate_Seqs_Exp_Dataset" class="doc_header"><code>generate_Seqs_Exp_Dataset</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L388" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>generate_Seqs_Exp_Dataset</code>(<strong><code>num_seq</code></strong>, <strong><code>low</code></strong>, <strong><code>high</code></strong>)</p>
+<h4 id="generate_Seqs_Exp_Dataset" class="doc_header"><code>generate_Seqs_Exp_Dataset</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L398" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>generate_Seqs_Exp_Dataset</code>(<strong><code>num_seq</code></strong>, <strong><code>low</code></strong>, <strong><code>high</code></strong>)</p>
 </blockquote>
 <p>generates a DNA dataset with Expression(or whatever else) values
 nucleotides/expressions will be drawn from 2 distinct distributions</p>
@@ -322,313 +326,6 @@ nucleotides/expressions will be drawn from 2 distinct distributions</p>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">generate_Seqs_Exp_Dataset</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Seqs</th>
-      <th>Exp</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GTTGTGGTTTC</td>
-      <td>0.21149332839302568</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>TTATTGCCCTG</td>
-      <td>-0.6734173749301339</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>CCTGGCTGACTTTAT</td>
-      <td>-0.8094650799459052</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>TCGACGACCCAA</td>
-      <td>-0.6704788021178381</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>GTATATCCAAAT</td>
-      <td>-0.1483692902697492</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>GAGAGAGGATCTAAC</td>
-      <td>-1.4565325911339704</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>CGTTCAAGCGACGTT</td>
-      <td>0.05914054769723368</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>TCGTTATGGGA</td>
-      <td>-0.29412480775248456</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>GTTCCTACCCCCGTGA</td>
-      <td>-0.9986863786450021</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>TGGCGCCTTTGTGTCCA</td>
-      <td>-0.768962610264953</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>AGCTGGTGTATCT</td>
-      <td>-0.9454579287098425</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>GCGACCTTAGTGAACT</td>
-      <td>-2.227856757181979</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>GAATTCTCACCTAGACT</td>
-      <td>1.3695793530820117</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>CGCGAGTTATCTCGGGAAA</td>
-      <td>0.20557431746062454</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>TGATGTTATCTT</td>
-      <td>-2.0033552998355892</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>CAGAACGCCTTT</td>
-      <td>0.6119742050493817</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>TACGTTAGGTGTTGGCTTC</td>
-      <td>0.8139060037308501</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>ACTCCTAATAT</td>
-      <td>0.7094898263361299</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>TGTCCCTTGAGGGCCATT</td>
-      <td>-0.0954058200131837</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>CCAGCCGCGAAC</td>
-      <td>1.0527303461396535</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>AAGCATCTGCGT</td>
-      <td>-1.4965467725090666</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>CTTTCCGCTCAGAC</td>
-      <td>-0.37592351855617234</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>CGCAGATGACATGCGCAA</td>
-      <td>-1.6000435922224479</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>GTTTTCTTTAGGAACTTTA</td>
-      <td>-0.5052470178831199</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>AATGCTTGGCAGCGTACAT</td>
-      <td>0.29750697722067565</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>CGATACTGCGGTATA</td>
-      <td>1.2028735097430845</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>TAACCGGGAC</td>
-      <td>0.014492135583022848</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>GAGAAATATCCG</td>
-      <td>0.9037278842092268</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>ACCCTAGCGG</td>
-      <td>-0.1589093899695254</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>TACGCGAGGCCGCAC</td>
-      <td>0.6015061666449715</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>TGACCCTCTGTGGACTCTA</td>
-      <td>-1.5580675134456445</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>CGAATATGCTA</td>
-      <td>-0.3962309889853234</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>TATGCAGTTCAA</td>
-      <td>-0.12657319360624378</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>GGACACGGCCA</td>
-      <td>-2.0725649573461573</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>GAGCAAACTG</td>
-      <td>1.3552676728259048</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>AAGGCGAAATGTTTTAA</td>
-      <td>-1.2006281238088259</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>CATGCGCATGAATGTGG</td>
-      <td>0.9693719265519685</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>AGGCGCAGACAGT</td>
-      <td>0.7255667498872482</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>GAGCCTGGTTCCACC</td>
-      <td>-0.7268722724466948</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>TAAAAAACATAGT</td>
-      <td>0.8678693782824982</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>TGGCACGATC</td>
-      <td>-0.7419076287094656</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>TAGTTGGGAGAGAGACTCT</td>
-      <td>-0.8122553537797939</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>AAGTAGGTTCCTG</td>
-      <td>-0.4990487294158272</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>CGACCACTCTGTTCT</td>
-      <td>-0.19939683398926486</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>CTGTTCCTCT</td>
-      <td>0.001112480053071957</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>CGGCTTCCACTTG</td>
-      <td>-0.9545027659453355</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>CATACCTCTCTCA</td>
-      <td>-0.707770914817555</td>
-    </tr>
-    <tr>
-      <th>47</th>
-      <td>GCCCATGACC</td>
-      <td>-1.015033433132734</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>TCGCTGTGTCT</td>
-      <td>-0.31936709907661714</td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>TATGAATGTAAACTGG</td>
-      <td>0.038445879524308474</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
 
 </div>
     {% endraw %}
@@ -660,12 +357,12 @@ nucleotides/expressions will be drawn from 2 distinct distributions</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([3., 3., 1., 1., 1., 3., 2., 1., 1., 1., 3., 3., 2., 2., 2., 1., 2.,
-       1., 1., 1., 2., 1., 3., 2., 1., 2., 2., 2., 1., 1., 1., 2., 3., 1.,
-       3., 1., 2., 3., 3., 3., 1., 1., 3., 1., 1., 2., 3., 1., 2., 2., 2.,
-       2., 1., 2., 2., 2., 1., 1., 3., 1., 2., 2., 2., 2., 1., 1., 2., 2.,
-       3., 3., 2., 4., 2., 2., 3., 1., 2., 2., 2., 3., 2., 1., 1., 2., 2.,
-       2., 2., 2., 2., 1., 1., 3., 2., 3., 1., 1., 2., 2., 2., 2.])</pre>
+<pre>array([2., 2., 1., 1., 3., 2., 3., 2., 2., 1., 1., 1., 2., 2., 1., 2., 2.,
+       2., 2., 2., 1., 3., 2., 2., 2., 2., 1., 1., 2., 1., 2., 1., 2., 3.,
+       3., 2., 2., 2., 1., 1., 1., 2., 1., 1., 2., 2., 2., 2., 2., 2., 2.,
+       2., 3., 3., 1., 2., 2., 2., 2., 4., 2., 1., 2., 1., 2., 2., 2., 2.,
+       1., 2., 2., 1., 1., 2., 2., 2., 1., 1., 3., 1., 1., 2., 2., 2., 2.,
+       3., 2., 2., 1., 1., 1., 1., 2., 2., 1., 1., 2., 2., 2., 2.])</pre>
 </div>
 
 </div>
