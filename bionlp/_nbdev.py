@@ -2,7 +2,7 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"gen_dna_vocab": "00_core.ipynb",
+index = {"gen_bio_vocab": "00_core.ipynb",
          "pred_vs_truth": "00_core.ipynb",
          "raw2token": "00_core.ipynb",
          "token2hot": "00_core.ipynb",
