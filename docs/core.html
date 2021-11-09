@@ -186,7 +186,7 @@ given dataloader.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="raw2token" class="doc_header"><code>raw2token</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L110" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>raw2token</code>(<strong><code>seq</code></strong>)</p>
+<h4 id="raw2token" class="doc_header"><code>raw2token</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L110" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>raw2token</code>(<strong><code>seq</code></strong>, <strong><code>bio_dict</code></strong>)</p>
 </blockquote>
 <p>takes in raw sequence then converts it to tokenized version</p>
 <p>'ATT' -&gt; [1 2 2]</p>
@@ -212,7 +212,7 @@ given dataloader.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="token2hot" class="doc_header"><code>token2hot</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L119" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>token2hot</code>(<strong><code>seq</code></strong>, <strong><code>max_length</code></strong>, <strong><code>bio_dict</code></strong>)</p>
+<h4 id="token2hot" class="doc_header"><code>token2hot</code><a href="https://github.com/cjgo/bionlp/tree/master/bionlp/core.py#L119" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>token2hot</code>(<strong><code>seq</code></strong>, <strong><code>max_length</code></strong>, <strong><code>n_features</code></strong>)</p>
 </blockquote>
 <p>takes in tokenized sequences and returns 1-hot encoded</p>
 <p>[1 2 2] -&gt; [1 0 0 0], [0 1 0 0 ], [0 1 0 0]</p>
